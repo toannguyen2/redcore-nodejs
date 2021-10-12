@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            Home
+        </a>
+        <div class="btn-group">
+            <button id="btnUserMini" class="navbar-toggler" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnUserMini">
+                <% if(user){ %>
+                    <li>
+                        <a class="dropdown-item" href="/"><%= user.name %></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </li>
+                <% } else{ %>
+                    <li>
+                        <a class="dropdown-item" href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/register">Register</a>
+                    </li>
+                <% } %>
+            </ul>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav me-auto">
+
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ms-auto">
+                <!-- Authentication Links -->
+                <% if(user){ %>
+                    <li class="nav-item dropdown btn-group">
+                        <a id="btnUserNav" data-bs-toggle="dropdown"
+                           aria-label="Toggle navigation"
+                           class="nav-link dropdown-toggle" href="#" role="button"
+                           aria-expanded="false"
+                        >
+                            <%= user.name %>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="btnUserNav">
+                            <a class="dropdown-item" href="/logout">
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                <% } else{ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

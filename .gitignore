@@ -1,0 +1,20 @@
+# OSX
+#
+.DS_Store
+
+# IntelliJ
+#
+build/
+.idea
+local.properties
+*.iml
+*.env
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+.cache
+*.local
+package-lock.json

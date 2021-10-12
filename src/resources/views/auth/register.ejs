@@ -1,0 +1,62 @@
+<!-- Styles -->
+<style>
+    .btn-grad {
+        background-image: linear-gradient(to right, #fe8c00 0%, #f83600 51%, #fe8c00 100%)
+    }
+
+    .btn-grad {
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+    }
+
+    .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btn-login {
+        width: 100%;
+        margin-top: 27px;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login-box {
+        margin-top: 24px;
+    }
+
+</style>
+<div class="flex-center position-ref login-box flex-column">
+    <div class="title">Register</div>
+    <div class="card-login shadow">
+        <form method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" name="username" class="form-control" id="username"
+                       placeholder="Enter your username, phone or email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="password"
+                       placeholder="Enter your password">
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm Password:</label>
+                <input type="password" name="confirm_password" class="form-control" id="confirm_password"
+                       placeholder="Enter your password">
+            </div>
+            <div class="center">
+                <button type="submit" class="btn btn-grad btn-login">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
